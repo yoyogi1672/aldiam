@@ -77,6 +77,9 @@ class ViewController: UIViewController, FSCalendarDelegate {
                 return
             }
         }
+        
+        titleTextField.text = ""
+        memoTextView.text = ""
     }
 
 
