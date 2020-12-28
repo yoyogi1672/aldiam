@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQw-Yo-YhQ" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="33" width="414" height="350"/>
+                                <rect key="frame" x="10" y="33" width="394" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="Sw1-GC-v2p"/>
                                 </constraints>
@@ -46,17 +46,51 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5qb-zz-oRf"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fQ-Ar-Qk5">
+                                <rect key="frame" x="10" y="413" width="394" height="419"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-UY-Gcs">
+                                        <rect key="frame" x="83" y="26" width="228" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kyw-FP-Kyz">
+                                        <rect key="frame" x="25" y="98" width="348" height="232"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17I-ZH-hRe">
+                                        <rect key="frame" x="172" y="366" width="31" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="保存"/>
+                                        <connections>
+                                            <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eYd-DW-1JR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CQw-Yo-YhQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="33" id="Bqr-YM-mau"/>
-                            <constraint firstItem="CQw-Yo-YhQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i1l-xU-fFX"/>
-                            <constraint firstItem="CQw-Yo-YhQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lDJ-x1-5Rk"/>
+                            <constraint firstItem="CQw-Yo-YhQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="33" id="Ajy-Kj-JPP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2fQ-Ar-Qk5" secondAttribute="trailing" constant="10" id="CdE-tR-iw4"/>
+                            <constraint firstItem="CQw-Yo-YhQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Fgy-uR-k1Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2fQ-Ar-Qk5" secondAttribute="bottom" constant="30" id="FmJ-7X-ECb"/>
+                            <constraint firstItem="2fQ-Ar-Qk5" firstAttribute="top" secondItem="CQw-Yo-YhQ" secondAttribute="bottom" constant="30" id="W29-I6-BOh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CQw-Yo-YhQ" secondAttribute="trailing" constant="10" id="ter-2L-gqp"/>
+                            <constraint firstItem="2fQ-Ar-Qk5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="zcP-Zf-sdt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendar" destination="CQw-Yo-YhQ" id="2PV-aO-Z1g"/>
+                        <outlet property="memoTextView" destination="kyw-FP-Kyz" id="gCL-kM-K16"/>
+                        <outlet property="titleTextField" destination="Xod-UY-Gcs" id="RD4-MW-ATK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -65,8 +99,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

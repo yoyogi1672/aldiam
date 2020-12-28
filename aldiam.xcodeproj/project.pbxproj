@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB14A56A2599AB0C00EBEED8 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EB14A5692599AB0C00EBEED8 /* Realm */; };
+		EB14A56C2599AB0C00EBEED8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EB14A56B2599AB0C00EBEED8 /* RealmSwift */; };
+		EB14A5712599ACF600EBEED8 /* diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14A5702599ACF600EBEED8 /* diary.swift */; };
 		EBF499BF259855B00041BA21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499BE259855B00041BA21 /* AppDelegate.swift */; };
 		EBF499C1259855B00041BA21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499C0259855B00041BA21 /* SceneDelegate.swift */; };
 		EBF499C3259855B00041BA21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499C2259855B00041BA21 /* ViewController.swift */; };
@@ -40,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB14A5702599ACF600EBEED8 /* diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diary.swift; sourceTree = "<group>"; };
 		EBF499BB259855B00041BA21 /* aldiam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aldiam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF499BE259855B00041BA21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF499C0259855B00041BA21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB14A56C2599AB0C00EBEED8 /* RealmSwift in Frameworks */,
+				EB14A56A2599AB0C00EBEED8 /* Realm in Frameworks */,
 				EBF499F3259856890041BA21 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +126,7 @@
 				EBF499C7259855B20041BA21 /* Assets.xcassets */,
 				EBF499C9259855B20041BA21 /* LaunchScreen.storyboard */,
 				EBF499CC259855B20041BA21 /* Info.plist */,
+				EB14A5702599ACF600EBEED8 /* diary.swift */,
 			);
 			path = aldiam;
 			sourceTree = "<group>";
@@ -160,6 +167,8 @@
 			name = aldiam;
 			packageProductDependencies = (
 				EBF499F2259856890041BA21 /* FSCalendar */,
+				EB14A5692599AB0C00EBEED8 /* Realm */,
+				EB14A56B2599AB0C00EBEED8 /* RealmSwift */,
 			);
 			productName = aldiam;
 			productReference = EBF499BB259855B00041BA21 /* aldiam.app */;
@@ -234,6 +243,7 @@
 			mainGroup = EBF499B2259855B00041BA21;
 			packageReferences = (
 				EBF499F1259856890041BA21 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				EB14A5682599AB0C00EBEED8 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = EBF499BC259855B00041BA21 /* Products */;
 			projectDirPath = "";
@@ -285,6 +295,7 @@
 				EBF499C3259855B00041BA21 /* ViewController.swift in Sources */,
 				EBF499BF259855B00041BA21 /* AppDelegate.swift in Sources */,
 				EBF499C1259855B00041BA21 /* SceneDelegate.swift in Sources */,
+				EB14A5712599ACF600EBEED8 /* diary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +630,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EB14A5682599AB0C00EBEED8 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.5.0;
+			};
+		};
 		EBF499F1259856890041BA21 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -630,6 +649,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EB14A5692599AB0C00EBEED8 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB14A5682599AB0C00EBEED8 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		EB14A56B2599AB0C00EBEED8 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB14A5682599AB0C00EBEED8 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		EBF499F2259856890041BA21 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EBF499F1259856890041BA21 /* XCRemoteSwiftPackageReference "FSCalendar" */;
