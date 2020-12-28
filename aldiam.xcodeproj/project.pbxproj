@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		EBF499CB259855B20041BA21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF499C9259855B20041BA21 /* LaunchScreen.storyboard */; };
 		EBF499D6259855B20041BA21 /* aldiamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499D5259855B20041BA21 /* aldiamTests.swift */; };
 		EBF499E1259855B20041BA21 /* aldiamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499E0259855B20041BA21 /* aldiamUITests.swift */; };
+		EBF499F3259856890041BA21 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = EBF499F2259856890041BA21 /* FSCalendar */; };
+		EBF49A03259892F10041BA21 /* paper-473630.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBF49A02259892F10041BA21 /* paper-473630.jpg */; };
+		EBF49A08259894070041BA21 /* scroll-1033117.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBF49A07259894070041BA21 /* scroll-1033117.jpg */; };
+		EBF49A0D2598AC930041BA21 /* leafy-2031234.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF49A0C2598AC930041BA21 /* leafy-2031234.png */; };
+		EBF49A122598AD380041BA21 /* color-2174049.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF49A112598AD380041BA21 /* color-2174049.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,10 @@
 		EBF499DC259855B20041BA21 /* aldiamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aldiamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF499E0259855B20041BA21 /* aldiamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aldiamUITests.swift; sourceTree = "<group>"; };
 		EBF499E2259855B20041BA21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBF49A02259892F10041BA21 /* paper-473630.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "paper-473630.jpg"; sourceTree = "<group>"; };
+		EBF49A07259894070041BA21 /* scroll-1033117.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "scroll-1033117.jpg"; sourceTree = "<group>"; };
+		EBF49A0C2598AC930041BA21 /* leafy-2031234.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leafy-2031234.png"; sourceTree = "<group>"; };
+		EBF49A112598AD380041BA21 /* color-2174049.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color-2174049.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF499F3259856890041BA21 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +89,10 @@
 		EBF499B2259855B00041BA21 = {
 			isa = PBXGroup;
 			children = (
+				EBF49A07259894070041BA21 /* scroll-1033117.jpg */,
+				EBF49A02259892F10041BA21 /* paper-473630.jpg */,
+				EBF49A0C2598AC930041BA21 /* leafy-2031234.png */,
+				EBF49A112598AD380041BA21 /* color-2174049.png */,
 				EBF499BD259855B00041BA21 /* aldiam */,
 				EBF499D4259855B20041BA21 /* aldiamTests */,
 				EBF499DF259855B20041BA21 /* aldiamUITests */,
@@ -144,6 +158,9 @@
 			dependencies = (
 			);
 			name = aldiam;
+			packageProductDependencies = (
+				EBF499F2259856890041BA21 /* FSCalendar */,
+			);
 			productName = aldiam;
 			productReference = EBF499BB259855B00041BA21 /* aldiam.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +232,9 @@
 				Base,
 			);
 			mainGroup = EBF499B2259855B00041BA21;
+			packageReferences = (
+				EBF499F1259856890041BA21 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = EBF499BC259855B00041BA21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +252,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF499CB259855B20041BA21 /* LaunchScreen.storyboard in Resources */,
+				EBF49A0D2598AC930041BA21 /* leafy-2031234.png in Resources */,
 				EBF499C8259855B20041BA21 /* Assets.xcassets in Resources */,
+				EBF49A122598AD380041BA21 /* color-2174049.png in Resources */,
+				EBF49A08259894070041BA21 /* scroll-1033117.jpg in Resources */,
 				EBF499C6259855B00041BA21 /* Main.storyboard in Resources */,
+				EBF49A03259892F10041BA21 /* paper-473630.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +617,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EBF499F1259856890041BA21 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EBF499F2259856890041BA21 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBF499F1259856890041BA21 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EBF499B3259855B00041BA21 /* Project object */;
 }
