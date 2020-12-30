@@ -82,15 +82,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17I-ZH-hRe">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17I-ZH-hRe" customClass="Button_Custom" customModule="aldiam" customModuleProvider="target">
                                         <rect key="frame" x="167" y="414" width="60" height="25"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="E8t-di-BUO"/>
                                             <constraint firstAttribute="width" constant="60" id="fHw-X8-6X0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
-                                        <state key="normal" title="保存">
+                                        <state key="normal" title="完了">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -137,6 +135,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="17I-ZH-hRe" id="Qcv-vG-UyL"/>
                         <outlet property="calendar" destination="CQw-Yo-YhQ" id="2PV-aO-Z1g"/>
                         <outlet property="memoTextView" destination="kyw-FP-Kyz" id="gCL-kM-K16"/>
                         <outlet property="titleTextField" destination="Xod-UY-Gcs" id="RD4-MW-ATK"/>
@@ -144,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+            <point key="canvasLocation" x="-104" y="145"/>
         </scene>
     </scenes>
     <resources>
