@@ -13,10 +13,10 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
 
     @IBOutlet weak var calendar: FSCalendar!
     
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var memoTextView: UITextView!
-    
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var memoLabel: UILabel!
+    var textDate:String!
     
     var selectedDate: Date = Date()
     
@@ -27,7 +27,6 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         calendar.delegate = self
-        titleTextField.delegate = self
         
         self.calendar.calendarWeekdayView.weekdayLabels[0].text = "日"
         self.calendar.calendarWeekdayView.weekdayLabels[1].text = "月"
@@ -37,77 +36,33 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
         self.calendar.calendarWeekdayView.weekdayLabels[5].text = "金"
         self.calendar.calendarWeekdayView.weekdayLabels[6].text = "土"
         
-        let rgba = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0) // ボタン背景色設定
-        button.backgroundColor = rgba                                               // 背景色
-        button.layer.borderWidth = 0                                              // 枠線の幅
-        button.layer.borderColor = UIColor.black.cgColor                            // 枠線の色
-        button.layer.cornerRadius = 3.0                                             // 角丸のサイズ
-        button.setTitleColor(UIColor.white, for: UIControl.State.normal)
         
-        // ツールバー生成 サイズはsizeToFitメソッドで自動で調整される。
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-
-            //サイズの自動調整。敢えて手動で実装したい場合はCGRectに記述してsizeToFitは呼び出さない。
-        toolBar.sizeToFit()
-
-            // 左側のBarButtonItemはflexibleSpace。これがないと右に寄らない。
-        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
-            // Doneボタン
-        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(commitButtonTapped))
-
-            // BarButtonItemの配置
-        toolBar.items = [spacer, commitButton]
-            // textViewのキーボードにツールバーを設定
-        memoTextView.inputAccessoryView = toolBar
+        let dt = Date()
+        let dateFormatter = DateFormatter()
+         
+        // DateFormatter を使用して書式とロケールを指定する
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "M/dd", options: 0, locale: Locale(identifier: "ja_JP"))
         
-        
+        textDate = dateFormatter.string(from: dt)
+        dateLabel.text = textDate
+
         
     }
     
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDate = date
+        let tmpDate = Calendar(identifier: .gregorian)
+        let month = tmpDate.component(.month, from: date)
+        let day = tmpDate.component(.day, from: date)
+        dateLabel.text = "\(month)/\(day)"
+        textDate = "\(month)/\(day)"
+
+        
         displayDiary()
     }
     
-    @IBAction func save(_ sender: Any) {
-        do {
-            let realm = try Realm()
-            let diary = diaryModel()
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy.MM.dd"
-
-
-            let dateString = dateFormatter.string(from: selectedDate)
-            diary.title = titleTextField.text ?? ""
-            diary.memo = memoTextView.text
-            diary.date = dateString
-            
-            
-            try realm.write {
-                realm.add(diary)
-            }
-            
-            // タイトルと本文をここで決めるよ
-            let alert: UIAlertController = UIAlertController(title: "完了", message: "保存されました", preferredStyle: .alert)
-
-            // OKボタンを作る
-            let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            // OKボタンを初めに作ったアラートに紐づけているよ
-            alert.addAction(okAction)
-
-            // 実際にアラートを表示するよ
-            self.present(alert, animated: true, completion: nil)
-            
-        } catch {
-            print("create todo error.")
-        }
-    }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
-        titleTextField.resignFirstResponder()
-        return true
-    }
     
     
     
@@ -121,13 +76,13 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
         let dateString = dateFormatter.string(from: selectedDate)
         for diary in diaries {
             if diary.date == dateString{
-                titleTextField.text = diary.title
-                memoTextView.text = diary.memo
+                titleLabel.text = diary.title
+                memoLabel.text = diary.memo
                 return
             }
         }
-        titleTextField.text = ""
-        memoTextView.text = ""
+        titleLabel.text = ""
+        memoLabel.text = ""
 
     }
         
@@ -138,7 +93,15 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
     @objc func commitButtonTapped() {
         self.view.endEditing(true)
     }
+    
+    @IBAction func button(_ sender: Any) {
+          let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "next") as! editorViewController
+          nextVC.dateLabel = textDate
+          nextVC.selectedDate = selectedDate
+          self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
+
 
 
 

@@ -11,7 +11,8 @@ import RealmSwift
 class diaryModel: Object {
     @objc dynamic var title = ""
     @objc dynamic var memo = ""
-    @objc dynamic var date = "" //yyyy.MM.dd
+    @objc dynamic var date = ""//yyyy.MM.dd
+    @objc dynamic var iamgeData = NSData()
 }
 
 
