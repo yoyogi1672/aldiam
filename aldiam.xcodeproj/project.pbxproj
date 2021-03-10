@@ -11,6 +11,10 @@
 		EB14A56C2599AB0C00EBEED8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EB14A56B2599AB0C00EBEED8 /* RealmSwift */; };
 		EB14A5712599ACF600EBEED8 /* diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14A5702599ACF600EBEED8 /* diary.swift */; };
 		EB83993B25CAA4E60024FF8F /* editorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83993A25CAA4E60024FF8F /* editorViewController.swift */; };
+		EBC2D20025F8D20400B295AD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC2D1FF25F8D20400B295AD /* icon.png */; };
+		EBC2D21925F8D82500B295AD /* calender_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC2D21625F8D82500B295AD /* calender_2x.png */; };
+		EBC2D21A25F8D82500B295AD /* calender_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC2D21725F8D82500B295AD /* calender_1x.png */; };
+		EBC2D21B25F8D82500B295AD /* calender_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC2D21825F8D82500B295AD /* calender_3x.png */; };
 		EBF499BF259855B00041BA21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499BE259855B00041BA21 /* AppDelegate.swift */; };
 		EBF499C1259855B00041BA21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499C0259855B00041BA21 /* SceneDelegate.swift */; };
 		EBF499C6259855B00041BA21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF499C4259855B00041BA21 /* Main.storyboard */; };
@@ -22,6 +26,7 @@
 		EBFE8FF025D3E1AF004FFC2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE8FEF25D3E1AF004FFC2F /* ViewController.swift */; };
 		EBFE900325D3E2F9004FFC2F /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE900225D3E2F9004FFC2F /* DisplayViewController.swift */; };
 		EBFE905525DE629C004FFC2F /* noImage.png in Resources */ = {isa = PBXBuildFile; fileRef = EBFE905425DE629C004FFC2F /* noImage.png */; };
+		EBFE905B25EB7913004FFC2F /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EBFE905A25EB7913004FFC2F /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,10 @@
 /* Begin PBXFileReference section */
 		EB14A5702599ACF600EBEED8 /* diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diary.swift; sourceTree = "<group>"; };
 		EB83993A25CAA4E60024FF8F /* editorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editorViewController.swift; sourceTree = "<group>"; };
+		EBC2D1FF25F8D20400B295AD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		EBC2D21625F8D82500B295AD /* calender_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_2x.png; sourceTree = "<group>"; };
+		EBC2D21725F8D82500B295AD /* calender_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_1x.png; sourceTree = "<group>"; };
+		EBC2D21825F8D82500B295AD /* calender_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_3x.png; sourceTree = "<group>"; };
 		EBF499BB259855B00041BA21 /* aldiam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aldiam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF499BE259855B00041BA21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF499C0259855B00041BA21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB14A56C2599AB0C00EBEED8 /* RealmSwift in Frameworks */,
+				EBFE905B25EB7913004FFC2F /* IQKeyboardManagerSwift in Frameworks */,
 				EB14A56A2599AB0C00EBEED8 /* Realm in Frameworks */,
 				EBF499F3259856890041BA21 /* FSCalendar in Frameworks */,
 			);
@@ -113,6 +123,10 @@
 		EBF499BD259855B00041BA21 /* aldiam */ = {
 			isa = PBXGroup;
 			children = (
+				EBC2D1FF25F8D20400B295AD /* icon.png */,
+				EBC2D21725F8D82500B295AD /* calender_1x.png */,
+				EBC2D21625F8D82500B295AD /* calender_2x.png */,
+				EBC2D21825F8D82500B295AD /* calender_3x.png */,
 				EBFE905425DE629C004FFC2F /* noImage.png */,
 				EBF499BE259855B00041BA21 /* AppDelegate.swift */,
 				EBF499C0259855B00041BA21 /* SceneDelegate.swift */,
@@ -166,6 +180,7 @@
 				EBF499F2259856890041BA21 /* FSCalendar */,
 				EB14A5692599AB0C00EBEED8 /* Realm */,
 				EB14A56B2599AB0C00EBEED8 /* RealmSwift */,
+				EBFE905A25EB7913004FFC2F /* IQKeyboardManagerSwift */,
 			);
 			productName = aldiam;
 			productReference = EBF499BB259855B00041BA21 /* aldiam.app */;
@@ -241,6 +256,7 @@
 			packageReferences = (
 				EBF499F1259856890041BA21 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				EB14A5682599AB0C00EBEED8 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				EBFE905925EB7913004FFC2F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = EBF499BC259855B00041BA21 /* Products */;
 			projectDirPath = "";
@@ -259,9 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF499CB259855B20041BA21 /* LaunchScreen.storyboard in Resources */,
+				EBC2D20025F8D20400B295AD /* icon.png in Resources */,
+				EBC2D21B25F8D82500B295AD /* calender_3x.png in Resources */,
 				EBF499C8259855B20041BA21 /* Assets.xcassets in Resources */,
 				EBFE905525DE629C004FFC2F /* noImage.png in Resources */,
+				EBC2D21A25F8D82500B295AD /* calender_1x.png in Resources */,
 				EBF499C6259855B00041BA21 /* Main.storyboard in Resources */,
+				EBC2D21925F8D82500B295AD /* calender_2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +662,14 @@
 				minimumVersion = 2.8.2;
 			};
 		};
+		EBFE905925EB7913004FFC2F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -659,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EBF499F1259856890041BA21 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		EBFE905A25EB7913004FFC2F /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBFE905925EB7913004FFC2F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

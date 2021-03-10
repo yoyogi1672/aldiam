@@ -16,9 +16,17 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var memoLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!{
+        didSet {
+            // デフォルトの画像を表示する
+            imageView.image = UIImage(named: "noImage.png")
+        }
+    }
+    @IBOutlet weak var rateLabel: UILabel!
     var textDate:String!
     
     var selectedDate: Date = Date()
+    var pushedDate: String!
     
 
     
@@ -41,7 +49,9 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
         let dateFormatter = DateFormatter()
          
         // DateFormatter を使用して書式とロケールを指定する
-        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "M/dd", options: 0, locale: Locale(identifier: "ja_JP"))
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "M/d", options: 0, locale: Locale(identifier: "ja_JP"))
+        
+        displayDiary()
         
         textDate = dateFormatter.string(from: dt)
         dateLabel.text = textDate
@@ -58,7 +68,7 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
         dateLabel.text = "\(month)/\(day)"
         textDate = "\(month)/\(day)"
 
-        
+        imageView.image = UIImage(named: "noImage.png")
         displayDiary()
     }
     
@@ -78,11 +88,14 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
             if diary.date == dateString{
                 titleLabel.text = diary.title
                 memoLabel.text = diary.memo
+                imageView.image = loadImageFromDocumentDirectory(fileName: diary.iamgeData)
+                rateLabel.text = String(diary.rate)
                 return
             }
         }
         titleLabel.text = ""
         memoLabel.text = ""
+        rateLabel.text = ""
 
     }
         
@@ -95,11 +108,28 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
     }
     
     @IBAction func button(_ sender: Any) {
-          let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "next") as! editorViewController
-          nextVC.dateLabel = textDate
-          nextVC.selectedDate = selectedDate
-          self.navigationController?.pushViewController(nextVC, animated: true)
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "next") as! editorViewController
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        let dateString = dateFormatter.string(from: selectedDate)
+        pushedDate = dateString
+        
+        nextVC.dateLabel = textDate
+        nextVC.pushedDate = pushedDate
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    func loadImageFromDocumentDirectory(fileName: String) -> UIImage? {
+
+            let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!;
+            let fileURL = documentsUrl.appendingPathComponent(fileName)
+            do {
+                let imageData = try Data(contentsOf: fileURL)
+                return UIImage(data: imageData)
+            } catch {}
+            return nil
+        }
 }
 
 
