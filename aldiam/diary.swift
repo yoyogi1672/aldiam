@@ -17,10 +17,3 @@ class diaryModel: Object {
     @objc dynamic var rate = 0
 }
 
-class ranking: Object {
-    @objc dynamic var rank1 = ""
-    @objc dynamic var rank2 = ""
-    @objc dynamic var rank3 = ""
-}
-
-

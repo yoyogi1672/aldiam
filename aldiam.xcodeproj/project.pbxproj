@@ -15,6 +15,8 @@
 		EBC2D21925F8D82500B295AD /* calender_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC2D21625F8D82500B295AD /* calender_2x.png */; };
 		EBC2D21A25F8D82500B295AD /* calender_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC2D21725F8D82500B295AD /* calender_1x.png */; };
 		EBC2D21B25F8D82500B295AD /* calender_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC2D21825F8D82500B295AD /* calender_3x.png */; };
+		EBC2D22425FC84F800B295AD /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2D22225FC84F800B295AD /* customCell.swift */; };
+		EBC2D22525FC84F800B295AD /* customCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC2D22325FC84F800B295AD /* customCell.xib */; };
 		EBF499BF259855B00041BA21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499BE259855B00041BA21 /* AppDelegate.swift */; };
 		EBF499C1259855B00041BA21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF499C0259855B00041BA21 /* SceneDelegate.swift */; };
 		EBF499C6259855B00041BA21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF499C4259855B00041BA21 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		EBC2D21625F8D82500B295AD /* calender_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_2x.png; sourceTree = "<group>"; };
 		EBC2D21725F8D82500B295AD /* calender_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_1x.png; sourceTree = "<group>"; };
 		EBC2D21825F8D82500B295AD /* calender_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_3x.png; sourceTree = "<group>"; };
+		EBC2D22225FC84F800B295AD /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		EBC2D22325FC84F800B295AD /* customCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customCell.xib; sourceTree = "<group>"; };
 		EBF499BB259855B00041BA21 /* aldiam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aldiam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF499BE259855B00041BA21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF499C0259855B00041BA21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +71,7 @@
 		EBF499E0259855B20041BA21 /* aldiamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aldiamUITests.swift; sourceTree = "<group>"; };
 		EBF499E2259855B20041BA21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBFE8FEF25D3E1AF004FFC2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EBFE900225D3E2F9004FFC2F /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		EBFE900225D3E2F9004FFC2F /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		EBFE905425DE629C004FFC2F /* noImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +142,8 @@
 				EBF499CC259855B20041BA21 /* Info.plist */,
 				EB14A5702599ACF600EBEED8 /* diary.swift */,
 				EB83993A25CAA4E60024FF8F /* editorViewController.swift */,
+				EBC2D22225FC84F800B295AD /* customCell.swift */,
+				EBC2D22325FC84F800B295AD /* customCell.xib */,
 			);
 			path = aldiam;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 				EBC2D21B25F8D82500B295AD /* calender_3x.png in Resources */,
 				EBF499C8259855B20041BA21 /* Assets.xcassets in Resources */,
 				EBFE905525DE629C004FFC2F /* noImage.png in Resources */,
+				EBC2D22525FC84F800B295AD /* customCell.xib in Resources */,
 				EBC2D21A25F8D82500B295AD /* calender_1x.png in Resources */,
 				EBF499C6259855B00041BA21 /* Main.storyboard in Resources */,
 				EBC2D21925F8D82500B295AD /* calender_2x.png in Resources */,
@@ -308,6 +315,7 @@
 			files = (
 				EBFE8FF025D3E1AF004FFC2F /* ViewController.swift in Sources */,
 				EBFE900325D3E2F9004FFC2F /* DisplayViewController.swift in Sources */,
+				EBC2D22425FC84F800B295AD /* customCell.swift in Sources */,
 				EBF499BF259855B00041BA21 /* AppDelegate.swift in Sources */,
 				EBF499C1259855B00041BA21 /* SceneDelegate.swift in Sources */,
 				EB83993B25CAA4E60024FF8F /* editorViewController.swift in Sources */,

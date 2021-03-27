@@ -13,8 +13,6 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     var realm: Realm!
     
     var diaries: Results<diaryModel>!
-    var pushedDate:String!
-    var dateLabel:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +22,10 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         // Realmの初期化
         realm = try! Realm()
-        
         diaries = realm.objects(diaryModel.self)
+        
+        table.register(UINib(nibName: "customCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        
         table.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -40,23 +40,28 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
             return diaries.count
         }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = diaries[indexPath.row].dateString + "   " +  diaries[indexPath.row].title
-        cell.imageView?.image = loadImageFromDocumentDirectory(fileName: diaries[indexPath.row].iamgeData)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)as! customCell
+        cell.label.text = diaries[indexPath.row].dateString + "   " +  diaries[indexPath.row].title
+        cell.img.image = loadImageFromDocumentDirectory(fileName: diaries[indexPath.row].iamgeData)
         return cell
         }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        pushedDate = diaries[indexPath.row].date
-        dateLabel = diaries[indexPath.row].dateString
+    func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(diaries[indexPath.row].dateString)
         
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "next") as! editorViewController
         
-        nextVC.dateLabel = dateLabel
-        nextVC.pushedDate = pushedDate
+        nextVC.dateLabel = diaries[indexPath.row].dateString
+        nextVC.pushedDate = diaries[indexPath.row].date
         self.navigationController?.pushViewController(nextVC, animated: true)
+        table.deselectRow(at: indexPath, animated: true)
     }
+    
     
     func loadImageFromDocumentDirectory(fileName: String) -> UIImage? {
 

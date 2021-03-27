@@ -55,8 +55,7 @@ class ViewController: UIViewController, FSCalendarDelegate, UITextFieldDelegate 
         
         textDate = dateFormatter.string(from: dt)
         dateLabel.text = textDate
-
-        
+        memoLabel.numberOfLines = 0
     }
     
     

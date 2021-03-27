@@ -25,7 +25,7 @@ class editorViewController: UIViewController, FSCalendarDelegate, UITextFieldDel
             imageView.image = UIImage(named: "noImage.png")
         }
     }
-    @IBOutlet weak var rateLabel: UILabel!
+
     
     @IBOutlet weak var ratePicker: UIPickerView!
     
@@ -34,7 +34,7 @@ class editorViewController: UIViewController, FSCalendarDelegate, UITextFieldDel
     var imageData: UIImage!
     var imageURL: String!
     var imageName:String!
-    var rate: Int!
+    var rate: Int = 0
     var pushedDate: String!
     
     var rateArray:[Int] = ([Int])(1...100)
@@ -92,7 +92,6 @@ class editorViewController: UIViewController, FSCalendarDelegate, UITextFieldDel
                 }
             }
             
-            //let highScore1:Int = ranking.rankig.
 
             
             saveImageInDocumentDirectory(image: imageData,fileName: pushedDate)
@@ -151,7 +150,6 @@ class editorViewController: UIViewController, FSCalendarDelegate, UITextFieldDel
                 titleTextField.text = diary.title
                 memoTextView.text = diary.memo
                 imageView.image = loadImageFromDocumentDirectory(fileName: diary.iamgeData)
-                rateLabel.text = String(diary.rate)
                 imageData = loadImageFromDocumentDirectory(fileName: diary.iamgeData)
                 return
             }
@@ -187,8 +185,6 @@ class editorViewController: UIViewController, FSCalendarDelegate, UITextFieldDel
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
-        rateLabel.text = "1"
-        rate = 1
         return String(rateArray[row])
     }
     
@@ -197,7 +193,6 @@ class editorViewController: UIViewController, FSCalendarDelegate, UITextFieldDel
                     didSelectRow row: Int,
                     inComponent component: Int) {
         rate = rateArray[row]
-        rateLabel.text = String(rateArray[row])
         
     }
     
